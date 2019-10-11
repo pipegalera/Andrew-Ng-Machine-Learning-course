@@ -125,3 +125,29 @@ When <img src="/tex/112e0823e05422da9985658c829beed2.svg?invert_in_darkmode&sani
 </p>
 
 The graph above minimizes the cost function as much as possible and consequently, the result of <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most 'circle'.
+
+# Gradient Descent
+
+So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That's where gradient descent comes in.
+
+Imagine that we graph our hypothesis function based on its fields <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> (actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.
+
+We put <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> on the x axis and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.
+
+<p align="center">
+<img src="images/gradient.png">
+</p>
+
+We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.
+
+The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>, which is called the learning rate.
+
+For example, the distance between each 'star' in the graph above represents a step determined by our parameter <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>,. A smaller α would result in a smaller step and a larger <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>, results in a larger step. The direction in which the step is taken is determined by the partial derivative of <img src="/tex/8fe4007120c3df67440d00ff258ffcda.svg?invert_in_darkmode&sanitize=true" align=middle width=60.970370999999986pt height=24.65753399999998pt/>. Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
+
+The gradient descent algorithm is:
+
+<p align="center"><img src="/tex/85f6fd126fe0d1fcb9290362a9b81370.svg?invert_in_darkmode&sanitize=true" align=middle width=174.55293899999998pt height=38.5152603pt/></p>
+
+where
+
+<img src="/tex/a8f306a6f9035370006c5350c9aa4aa8.svg?invert_in_darkmode&sanitize=true" align=middle width=53.37235034999999pt height=21.68300969999999pt/> represents the feature index number, <img src="/tex/5fc6094a9c29537af5f99e0fceb76364.svg?invert_in_darkmode&sanitize=true" align=middle width=17.35165739999999pt height=14.15524440000002pt/> is the assigment math symbol and <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is the learning rate.
