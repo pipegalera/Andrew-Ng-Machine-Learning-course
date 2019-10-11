@@ -142,7 +142,7 @@ We will know that we have succeeded when our cost function is at the very bottom
 
 The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter $\alpha$, which is called the learning rate.
 
-For example, the distance between each 'star' in the graph above represents a step determined by our parameter $\alpha$,. A smaller α would result in a smaller step and a larger $\alpha$, results in a larger step. The direction in which the step is taken is determined by the partial derivative of $J(\theta_0,\theta_1)$. Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
+For example, the distance between each 'star' in the graph above represents a step determined by our parameter $\alpha$,. A smaller $\alpha$ would result in a smaller step and a larger $\alpha$, results in a larger step. The direction in which the step is taken is determined by the partial derivative of $J(\theta_0,\theta_1)$. Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
 
 The gradient descent algorithm is:
 
@@ -152,4 +152,52 @@ The gradient descent algorithm is:
 
 where
 
-$j=0,1$ represents the feature index number, $:=$ is the assigment math symbol and $\alpha$ is the learning rate.
+$j=0,1$ represents the feature index number, $:=$ is the assigment ("update") math symbol and $\alpha$ is the learning rate.
+
+At each iteration j, one should simultaneously update the parameters $\theta_1, \theta_2,...,\theta_n$. Updating a specific parameter prior to calculating another one on the $j^{(th)}$ iteration would yield to a wrong implementation:
+
+<p align="center">
+<img src="images/correct_gradient.png">
+</p>
+
+# Gradient Descent Intuition
+
+We are going to explore the scenario where we used one parameter $\theta_1$ and plotted its cost function to implement a gradient descent.
+
+<p align="center">
+<img src="images/gradient_intuition_1.png">
+</p>
+
+- The derivate term (\frac{d}{d\theta_1})
+
+We start at a random point on the function $J(\tetha_1)$, e.g $\theta_1$ in the x axis. We compute the derivative \frac{d}{d\theta_1}, that is the tangent line to the point $\theta_1$. We discover that it is positive, now the function know that the point is a in positive slope (given that the slope is the derivative of $\theta_1$). So, the update is going to be $\theta_1$ minus $\alpha$ times some positive number:
+
+<p align="center">
+<img src="images/gradient_intuition_2.png">
+</p>
+
+With the update, the gradient descent drives $\theta_1$ to the left, closer to the minimum.
+
+It can happen the opposite, the slope of the tangent line is negative given that the derivative of $\theta_1$ is negative. With the formula we see that negative $\alpha$ times the negative derivative makes the $\theta_1$ bigger, driving the updated $\theta_1$ to the right.
+
+<p align="center">
+<img src="images/gradient_intuition_3.png">
+</p>
+
+In any case, regardless of the slope's sign for $\frac{d}{d\theta_1}J(\theta_1), \theta_1$ eventually converges to its minimum value.
+
+- learning rate ($\alpha$)
+
+We should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.
+
+<p align="center">
+<img src="images/gradient_intuition_4.png">
+</p>
+
+Gradient descent can converge to a local minimum, even with the learning rate $\alpha$ fixed. As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease $\alpha$ over time.
+
+Note that if you are already at the local optimum it leaves $\theta_1$ unchanged cause its updates as $\theta_j := \theta_j - \alpha\times0$.
+
+<p align="center">
+<img src="images/gradient_intuition_5.png">
+</p>
