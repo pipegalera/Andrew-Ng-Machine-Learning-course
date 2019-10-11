@@ -168,7 +168,7 @@ We are going to explore the scenario where we used one parameter $\theta_1$ and 
 <img src="images/gradient_intuition_1.png">
 </p>
 
-- The derivate term (\frac{d}{d\theta_1})
+- The derivate term ($\frac{d}{d\theta_1}$)
 
 We start at a random point on the function $J(\tetha_1)$, e.g $\theta_1$ in the x axis. We compute the derivative \frac{d}{d\theta_1}, that is the tangent line to the point $\theta_1$. We discover that it is positive, now the function know that the point is a in positive slope (given that the slope is the derivative of $\theta_1$). So, the update is going to be $\theta_1$ minus $\alpha$ times some positive number:
 
