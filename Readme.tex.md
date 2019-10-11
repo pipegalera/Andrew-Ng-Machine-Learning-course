@@ -30,8 +30,7 @@ Example 2:
 
 (b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
-
-![](images/supervisedlearning.png){:height="50%" width="50%"}
+<img src="images/supervisedlearning.png" width="100" height="100">
 
 # Unsupervised Learning
 
