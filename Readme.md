@@ -31,7 +31,7 @@ Example 2:
 (b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
 
-![](images/supervisedlearning.png)
+![](images/supervisedlearning.png){:height="50%" width="50%"}
 
 # Unsupervised Learning
 
@@ -47,7 +47,7 @@ Clustering: Take a collection of 1,000,000 different genes, and find a way to au
 
 Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).
 
-![](images/unsupervisedlearning.png)
+![](images/unsupervisedlearning.png){:height="50%" width="50%"}
 
 # Model Representation
 
@@ -59,7 +59,7 @@ Note that the superscript “<img src="/tex/945cfdab316c27e0a9475969788be662.svg
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function <img src="/tex/bba86056bdbd914e17b3a73cfac216cd.svg?invert_in_darkmode&sanitize=true" align=middle width=51.27458819999998pt height=22.831056599999986pt/> so that <img src="/tex/82b61730744eb40135709391ec01cbdb.svg?invert_in_darkmode&sanitize=true" align=middle width=31.651535849999988pt height=24.65753399999998pt/> is a “good” predictor for the corresponding value of <img src="/tex/deceeaf6940a8c7a5a02373728002b0f.svg?invert_in_darkmode&sanitize=true" align=middle width=8.649225749999989pt height=14.15524440000002pt/>. For historical reasons, this function <img src="/tex/2ad9d098b937e46f9f58968551adac57.svg?invert_in_darkmode&sanitize=true" align=middle width=9.47111549999999pt height=22.831056599999986pt/> is called a hypothesis. Seen pictorially, the process is therefore like this:
 
-![](images/hypothesis.png)
+![](images/hypothesis.png){:class="img-responsive"}
 
 When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.
 
@@ -81,15 +81,15 @@ If we try to think of it in visual terms, our training data set is scattered on 
 
 Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of <img src="/tex/dde9bb45048690d27e2b6c199faf1f5d.svg?invert_in_darkmode&sanitize=true" align=middle width=60.970370999999986pt height=24.65753399999998pt/> will be 0. The following example shows the ideal situation where we have a cost function of 0.
 
-![](images/costfunction1.png)
+![](images/costfunction1.png){:class="img-responsive"}
 
 When <img src="/tex/a9c6a444f1f65977995aeafe59acd891.svg?invert_in_darkmode&sanitize=true" align=middle width=45.22819289999998pt height=22.831056599999986pt/> , we get a slope of 1 which goes through every single data point in our model. Conversely, when <img src="/tex/2bcbe5c0630d86ce638154ddcb6dc655.svg?invert_in_darkmode&sanitize=true" align=middle width=58.013625449999985pt height=22.831056599999986pt/>, we see the vertical distance from our fit to the data points increase.
 
-![](images/costfunction2.png)
+![](images/costfunction2.png){:class="img-responsive"}
 
 This increases our cost function to 0.58. Plotting several other points yields to the following graph:
 
-![](images/costfunction3.png)
+![](images/costfunction3.png){:class="img-responsive"}
 
 Thus as a goal, we should try to minimize the cost function. In this case, <img src="/tex/a9c6a444f1f65977995aeafe59acd891.svg?invert_in_darkmode&sanitize=true" align=middle width=45.22819289999998pt height=22.831056599999986pt/> is our global minimum.
 
@@ -97,14 +97,14 @@ Thus as a goal, we should try to minimize the cost function. In this case, <img 
 
 A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.
 
-![](images/costfunction4.png)
+![](images/costfunction4.png){:class="img-responsive"}
 
 Taking any color and going along the 'circle', one would expect to get the same value of the cost function. For example, the three green points found on the green line above have the same value for <img src="/tex/8fe4007120c3df67440d00ff258ffcda.svg?invert_in_darkmode&sanitize=true" align=middle width=60.970370999999986pt height=24.65753399999998pt/> and as a result, they are found along the same line. The circled <img src="/tex/332cc365a4987aacce0ead01b8bdcc0b.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=14.15524440000002pt/> displays the value of the cost function for the graph on the left when <img src="/tex/5cd8e0abe46d1d38b0144343ff33af27.svg?invert_in_darkmode&sanitize=true" align=middle width=61.66661159999999pt height=22.831056599999986pt/> and <img src="/tex/e0cc6478e5b19281c2d782203319dd99.svg?invert_in_darkmode&sanitize=true" align=middle width=79.01826899999998pt height=22.831056599999986pt/>. Taking another <img src="/tex/82b61730744eb40135709391ec01cbdb.svg?invert_in_darkmode&sanitize=true" align=middle width=31.651535849999988pt height=24.65753399999998pt/> and plotting its contour plot, one gets the following graphs:
 
-![](images/costfunction5.png)
+![](images/costfunction5.png){:class="img-responsive"}
 
 When <img src="/tex/112e0823e05422da9985658c829beed2.svg?invert_in_darkmode&sanitize=true" align=middle width=61.66661159999999pt height=22.831056599999986pt/> and <img src="/tex/a85bf85e8a0643297472863cdc9c7506.svg?invert_in_darkmode&sanitize=true" align=middle width=45.22819289999998pt height=22.831056599999986pt/>, the value of <img src="/tex/8fe4007120c3df67440d00ff258ffcda.svg?invert_in_darkmode&sanitize=true" align=middle width=60.970370999999986pt height=24.65753399999998pt/> in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.
 
-![](images/costfunction6.png)
+![](images/costfunction6.png){:class="img-responsive"}
 
 The graph above minimizes the cost function as much as possible and consequently, the result of <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most 'circle'.
