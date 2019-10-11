@@ -31,7 +31,7 @@ Example 2:
 (b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
 <p align="center">
-<img src="images/supervisedlearning.png" width="500" height="500">
+<img src="images/supervisedlearning.png" width="40%" height="40%">
 </p>
 
 # Unsupervised Learning
@@ -49,7 +49,7 @@ Clustering: Take a collection of 1,000,000 different genes, and find a way to au
 Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).
 
 <p align="center">
-<img src="images/unsupervisedlearning.png" width="500" height="500">
+<img src="images/unsupervisedlearning.png" width="40%" height="40%">
 </p>
 
 # Model Representation
@@ -163,7 +163,7 @@ At each iteration j, one should simultaneously update the parameters <img src="/
 We are going to explore the scenario where we used one parameter <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and plotted its cost function to implement a gradient descent.
 
 <p align="center">
-<img src="images/gradient_intuition_1.png">
+<img src="images/gradient_intuition_1.png" width="40%" height="40%">
 </p>
 
 - The derivate term (<img src="/tex/5cd4bd489ca10340bf4bc49aeb256ed9.svg?invert_in_darkmode&sanitize=true" align=middle width=19.520070899999997pt height=28.92634470000001pt/>)
@@ -171,7 +171,7 @@ We are going to explore the scenario where we used one parameter <img src="/tex/
 We start at a random point on the function <img src="/tex/8386f4ee1bd33b1859e566a2277e0342.svg?invert_in_darkmode&sanitize=true" align=middle width=30.856244099999987pt height=24.65753399999998pt/>, e.g <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> in the x axis. We compute the derivative \frac{d}{d\theta_1}, that is the tangent line to the point <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>. We discover that it is positive, now the function know that the point is a in positive slope (given that the slope is the derivative of <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>). So, the update is going to be <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> minus <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> times some positive number:
 
 <p align="center">
-<img src="images/gradient_intuition_2.png">
+<img src="images/gradient_intuition_2.png" width="40%" height="40%">
 </p>
 
 With the update, the gradient descent drives <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> to the left, closer to the minimum.
@@ -179,17 +179,17 @@ With the update, the gradient descent drives <img src="/tex/edcbf8dd6dd9743cceee
 It can happen the opposite, the slope of the tangent line is negative given that the derivative of <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> is negative. With the formula we see that negative <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> times the negative derivative makes the <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> bigger, driving the updated <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> to the right.
 
 <p align="center">
-<img src="images/gradient_intuition_3.png">
+<img src="images/gradient_intuition_3.png" width="40%" height="40%">
 </p>
 
 In any case, regardless of the slope's sign for <img src="/tex/9f5988a44f8908cc670ea5db12559946.svg?invert_in_darkmode&sanitize=true" align=middle width=81.64112714999999pt height=28.92634470000001pt/> eventually converges to its minimum value.
 
-- learning rate (<img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>)
+- Learning rate (<img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>)
 
 We should adjust our parameter <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.
 
 <p align="center">
-<img src="images/gradient_intuition_4.png">
+<img src="images/gradient_intuition_4.png" width="40%" height="40%">
 </p>
 
 Gradient descent can converge to a local minimum, even with the learning rate <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> fixed. As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> over time.
@@ -197,5 +197,5 @@ Gradient descent can converge to a local minimum, even with the learning rate <i
 Note that if you are already at the local optimum it leaves <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> unchanged cause its updates as <img src="/tex/7341b0dc745871a6165cd40beb5d7e8f.svg?invert_in_darkmode&sanitize=true" align=middle width=114.74853555pt height=22.831056599999986pt/>.
 
 <p align="center">
-<img src="images/gradient_intuition_5.png">
+<img src="images/gradient_intuition_5.png" width="40%" height="40%">
 </p>
