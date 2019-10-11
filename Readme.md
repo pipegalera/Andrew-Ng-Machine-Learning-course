@@ -166,7 +166,7 @@ We are going to explore the scenario where we used one parameter <img src="/tex/
 <img src="images/gradient_intuition_1.png">
 </p>
 
-- The derivate term (\frac{d}{d\theta_1})
+- The derivate term (<img src="/tex/5cd4bd489ca10340bf4bc49aeb256ed9.svg?invert_in_darkmode&sanitize=true" align=middle width=19.520070899999997pt height=28.92634470000001pt/>)
 
 We start at a random point on the function <img src="/tex/8386f4ee1bd33b1859e566a2277e0342.svg?invert_in_darkmode&sanitize=true" align=middle width=30.856244099999987pt height=24.65753399999998pt/>, e.g <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> in the x axis. We compute the derivative \frac{d}{d\theta_1}, that is the tangent line to the point <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>. We discover that it is positive, now the function know that the point is a in positive slope (given that the slope is the derivative of <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>). So, the update is going to be <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> minus <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> times some positive number:
 
