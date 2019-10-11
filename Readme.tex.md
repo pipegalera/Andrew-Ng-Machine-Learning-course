@@ -30,7 +30,7 @@ Example 2:
 
 (b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
-<img src="images/supervisedlearning.png" width="100" height="100">
+<img src="images/supervisedlearning.png" width="300" height="300" class="center">
 
 # Unsupervised Learning
 
@@ -46,7 +46,7 @@ Clustering: Take a collection of 1,000,000 different genes, and find a way to au
 
 Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).
 
-![](images/unsupervisedlearning.png){:height="50%" width="50%"}
+<img src="images/unsupervisedlearning.png" width="300" height="300" class="center">
 
 # Model Representation
 
@@ -58,7 +58,7 @@ Note that the superscript “$(i)$” in the notation is simply an index into th
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X → Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function $h$ is called a hypothesis. Seen pictorially, the process is therefore like this:
 
-![](images/hypothesis.png){:class="img-responsive"}
+<img src="images/hypothesis.png" width="300" height="300" class="center">
 
 When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.
 
@@ -80,15 +80,15 @@ If we try to think of it in visual terms, our training data set is scattered on 
 
 Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of $J(\theta_0, \theta_1)$ will be 0. The following example shows the ideal situation where we have a cost function of 0.
 
-![](images/costfunction1.png){:class="img-responsive"}
+<img src="images/costfunction1.png" width="300" height="300" class="center">
 
 When $\theta_1 = 1$ , we get a slope of 1 which goes through every single data point in our model. Conversely, when $\theta_1 = 0.5$, we see the vertical distance from our fit to the data points increase.
 
-![](images/costfunction2.png){:class="img-responsive"}
+<img src="images/costfunction2.png" width="300" height="300" class="center">
 
 This increases our cost function to 0.58. Plotting several other points yields to the following graph:
 
-![](images/costfunction3.png){:class="img-responsive"}
+<img src="images/costfunction3.png" width="300" height="300" class="center">
 
 Thus as a goal, we should try to minimize the cost function. In this case, $\theta_1 = 1$ is our global minimum.
 
@@ -96,14 +96,14 @@ Thus as a goal, we should try to minimize the cost function. In this case, $\the
 
 A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.
 
-![](images/costfunction4.png){:class="img-responsive"}
+<img src="images/costfunction4.png" width="300" height="300" class="center">
 
 Taking any color and going along the 'circle', one would expect to get the same value of the cost function. For example, the three green points found on the green line above have the same value for $J(\theta_0,\theta_1)$ and as a result, they are found along the same line. The circled $x$ displays the value of the cost function for the graph on the left when $\theta_0= 800_$ and $\theta_1 = -0.15$. Taking another $h(x)$ and plotting its contour plot, one gets the following graphs:
 
-![](images/costfunction5.png){:class="img-responsive"}
+<img src="images/costfunction5.png" width="300" height="300" class="center">
 
 When $\theta_0 = 360$ and $\theta_1 = 0$, the value of $J(\theta_0,\theta_1)$ in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.
 
-![](images/costfunction6.png){:class="img-responsive"}
+<img src="images/costfunction6.png" width="300" height="300" class="center">
 
 The graph above minimizes the cost function as much as possible and consequently, the result of $\theta_1$ and $\theta_0$ tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most 'circle'.
