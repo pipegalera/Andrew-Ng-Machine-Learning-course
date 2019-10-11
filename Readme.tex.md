@@ -51,7 +51,7 @@ Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in 
 
 # Model Representation
 
-To establish notation for future use, we’ll use $`x^{(i)}x(i)`$ to denote the “input” variables (living area in this example), also called input features, and $`y^{(i)}y(i)`$ to denote the “output” or target variable that we are trying to predict (price).
+To establish notation for future use, we’ll use $x^{(i)}x(i)$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}y(i)$ to denote the “output” or target variable that we are trying to predict (price).
 
 A pair $(x^{(i)}, y^{(i)})$ is called a training example, and the dataset that we’ll be using to learn—a list of m training examples $(x^{(i)}, y^{(i)});i=1,...,m$—is called a training set.
 
