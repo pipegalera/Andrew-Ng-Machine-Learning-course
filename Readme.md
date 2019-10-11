@@ -51,7 +51,7 @@ Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in 
 
 # Model Representation
 
-To establish notation for future use, we’ll use <img src="/tex/87a22e4e52ef20074645f805ac2aefec.svg?invert_in_darkmode&sanitize=true" align=middle width=62.117903099999985pt height=29.190975000000005pt/> to denote the “input” variables (living area in this example), also called input features, and <img src="/tex/c27bdf9bfd54a7adc652fc606e99d956.svg?invert_in_darkmode&sanitize=true" align=middle width=60.62633939999999pt height=29.190975000000005pt/> to denote the “output” or target variable that we are trying to predict (price).
+To establish notation for future use, we’ll use <img src="/tex/839bd530124f302b99b3bf7c247a4bb6.svg?invert_in_darkmode&sanitize=true" align=middle width=52.985455049999985pt height=29.190975000000005pt/> to denote the “input” variables (living area in this example), also called input features, and <img src="/tex/f1ff827dd1819f91fd40229eac1ce7b7.svg?invert_in_darkmode&sanitize=true" align=middle width=51.493891349999984pt height=29.190975000000005pt/> to denote the “output” or target variable that we are trying to predict (price).
 
 A pair <img src="/tex/9a9ed1968ddefaa8d6f1635e03f6c72b.svg?invert_in_darkmode&sanitize=true" align=middle width=69.62915025pt height=29.190975000000005pt/> is called a training example, and the dataset that we’ll be using to learn—a list of m training examples <img src="/tex/7725b3ed04e52ec88cb35b792c1cb11c.svg?invert_in_darkmode&sanitize=true" align=middle width=155.4786387pt height=29.190975000000005pt/>—is called a training set.
 
