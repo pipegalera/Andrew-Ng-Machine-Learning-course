@@ -31,7 +31,7 @@ Example 2:
 (b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
 <p align="center">
-<img src="images/supervisedlearning.png" width="500" height="500">
+<img src="images/supervisedlearning.png" width="40%" height="40%">
 </p>
 
 # Unsupervised Learning
@@ -49,7 +49,7 @@ Clustering: Take a collection of 1,000,000 different genes, and find a way to au
 Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).
 
 <p align="center">
-<img src="images/unsupervisedlearning.png" width="500" height="500">
+<img src="images/unsupervisedlearning.png" width="40%" height="40%">
 </p>
 
 # Model Representation
@@ -165,7 +165,7 @@ At each iteration j, one should simultaneously update the parameters $\theta_1, 
 We are going to explore the scenario where we used one parameter $\theta_1$ and plotted its cost function to implement a gradient descent.
 
 <p align="center">
-<img src="images/gradient_intuition_1.png">
+<img src="images/gradient_intuition_1.png" width="40%" height="40%">
 </p>
 
 - The derivate term ($\frac{d}{d\theta_1}$)
@@ -173,7 +173,7 @@ We are going to explore the scenario where we used one parameter $\theta_1$ and 
 We start at a random point on the function $J(\tetha_1)$, e.g $\theta_1$ in the x axis. We compute the derivative \frac{d}{d\theta_1}, that is the tangent line to the point $\theta_1$. We discover that it is positive, now the function know that the point is a in positive slope (given that the slope is the derivative of $\theta_1$). So, the update is going to be $\theta_1$ minus $\alpha$ times some positive number:
 
 <p align="center">
-<img src="images/gradient_intuition_2.png">
+<img src="images/gradient_intuition_2.png" width="40%" height="40%">
 </p>
 
 With the update, the gradient descent drives $\theta_1$ to the left, closer to the minimum.
@@ -181,17 +181,17 @@ With the update, the gradient descent drives $\theta_1$ to the left, closer to t
 It can happen the opposite, the slope of the tangent line is negative given that the derivative of $\theta_1$ is negative. With the formula we see that negative $\alpha$ times the negative derivative makes the $\theta_1$ bigger, driving the updated $\theta_1$ to the right.
 
 <p align="center">
-<img src="images/gradient_intuition_3.png">
+<img src="images/gradient_intuition_3.png" width="40%" height="40%">
 </p>
 
 In any case, regardless of the slope's sign for $\frac{d}{d\theta_1}J(\theta_1), \theta_1$ eventually converges to its minimum value.
 
-- learning rate ($\alpha$)
+- Learning rate ($\alpha$)
 
 We should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.
 
 <p align="center">
-<img src="images/gradient_intuition_4.png">
+<img src="images/gradient_intuition_4.png" width="40%" height="40%">
 </p>
 
 Gradient descent can converge to a local minimum, even with the learning rate $\alpha$ fixed. As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease $\alpha$ over time.
@@ -199,5 +199,5 @@ Gradient descent can converge to a local minimum, even with the learning rate $\
 Note that if you are already at the local optimum it leaves $\theta_1$ unchanged cause its updates as $\theta_j := \theta_j - \alpha\times0$.
 
 <p align="center">
-<img src="images/gradient_intuition_5.png">
+<img src="images/gradient_intuition_5.png" width="40%" height="40%">
 </p>
