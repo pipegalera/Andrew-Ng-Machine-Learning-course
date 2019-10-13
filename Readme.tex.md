@@ -212,7 +212,7 @@ When specifically applied to the case of linear regression (the "OLS" cost funct
   \theta_j := \theta_j - \alpha\frac{d}{d\theta_j}J(\theta_0,\theta_1)
 \end{align*}
 
-With our actual cost function and our actual hypothesis function:
+With our actual hypothesis function and our actual cost function:
 
 \begin{align*}
   h_{\theta}(x)= \theta_0 + \theta_1x
@@ -221,8 +221,29 @@ With our actual cost function and our actual hypothesis function:
   J(\theta_0,\theta_1)= \frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)^2
 \end{align*}
 
+
+For the derivate, we solve for $\theta_0$ and $\theta_1$:
+
+* For $\theta_0: \frac{d}{d\theta_0}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)$
+
+* For $\theta_1: \frac{d}{d\theta_1}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)x_i$
+
 Resulting in:
 
+repeat until convergence {
+
 \begin{align*}
-\theta_j := \theta_j - \alpha\frac{d}{d\theta_j}\frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)^2
+\theta_0 := \theta_0 - \alpha\\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)
 \end{align*}
+
+\begin{align*}
+\theta_1 := \theta_1 - \alpha\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)x_i
+\end{align*}
+
+}
+
+The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.
+
+So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called batch gradient descent.
+
+Note that, while gradient descent can be susceptible to local minimum in general, the optimization problem we have posed here for linear regression has only one global, and no other local,thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum.
