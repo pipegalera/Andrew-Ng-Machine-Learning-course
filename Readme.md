@@ -72,7 +72,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 
 We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
-<p align="center"><img src="/tex/b16278c5645cbe4b5ccf97034e0288bb.svg?invert_in_darkmode&sanitize=true" align=middle width=301.86909555pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/aa02f1873b4bf659dfc0a6d479545b8e.svg?invert_in_darkmode&sanitize=true" align=middle width=322.83924584999994pt height=44.89738935pt/></p>
 
 To break it apart, it is <img src="/tex/d6b19f68aacb4461f4427e1489098827.svg?invert_in_darkmode&sanitize=true" align=middle width=17.920126949999997pt height=27.77565449999998pt/> where <img src="/tex/33717a96ef162d4ca3780ca7d161f7ad.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=18.666631500000015pt/> is the mean of the squares of <img src="/tex/f0e008f4b5c3add6125c62fca6b420a1.svg?invert_in_darkmode&sanitize=true" align=middle width=73.30191659999998pt height=24.65753399999998pt/>, or the difference between the predicted value and the actual value.
 
@@ -208,8 +208,8 @@ When specifically applied to the case of linear regression, a new form of the gr
 
 With our actual cost function and our actual hypothesis function:
 
-<p align="center"><img src="/tex/790cf01828db4348e4bc0461b7caa951.svg?invert_in_darkmode&sanitize=true" align=middle width=321.29099145pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/1c35c5cba37e39e66b43b00292e2c62e.svg?invert_in_darkmode&sanitize=true" align=middle width=341.38218179999996pt height=44.89738935pt/></p>
 
 Resulting in:
 
-\theta_j := \theta_j - \alpha\frac{d}{d\theta_j}\frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i −y_i)^2
+<p align="center"><img src="/tex/289525cd77964c7abe021f2b271a4591.svg?invert_in_darkmode&sanitize=true" align=middle width=231.31034025pt height=44.89738935pt/></p>
