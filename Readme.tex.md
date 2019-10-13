@@ -73,7 +73,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
 \begin{align*}
-    J(\theta_0,\theta_1)=\frac{1}{2m}\sum\limits_{i=1}^{m}(\hat{y}_i−y_i)^2=\frac{1}{2m}\sum\limits_{i=1}^{m}h_\theta(x_i −y_i)^2
+    J(\theta_0,\theta_1)=\frac{1}{2m}\sum\limits_{i=1}^{m}(\hat{y}_i−y_i)^2=\frac{1}{2m}\sum\limits_{i=1}^{m}(h_\thetax_i −y_i)^2
 \end{align*}
 
 To break it apart, it is $\frac{1}{2}\bar{x}$ where $\bar{x}$ is the mean of the squares of $h_\theta(x_{i}) - y$, or the difference between the predicted value and the actual value.
@@ -205,3 +205,20 @@ Note that if you are already at the local optimum it leaves $\theta_1$ unchanged
 </p>
 
 # Gradient Descent For Linear Regression
+
+When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We substitute the gradient descent algorithm:
+
+\begin{align*}
+  \theta_j := \theta_j - \alpha\frac{d}{d\theta_j}J(\theta_0,\theta_1)
+\end{align*}
+
+With our actual cost function and our actual hypothesis function:
+
+\begin{align*}
+  h_{\theta}(x)= \theta_0 + \theta_1x
+  J(\theta_0,\theta_1)= \frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i −y_i)^2
+\end{align*}
+
+Resulting in:
+
+\theta_j := \theta_j - \alpha\frac{d}{d\theta_j}\frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i −y_i)^2
