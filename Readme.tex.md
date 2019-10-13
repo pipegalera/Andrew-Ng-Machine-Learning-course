@@ -73,7 +73,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
 \begin{align*}
-    J(\theta_0,\theta_1)=\frac{1}{2m}\sum\limits_{i=1}^{m}(\hat{y}_i−y_i)^2=\frac{1}{2m}\sum\limits_{i=1}^{m}h_\theta(x_i −y_i)^2$
+    J(\theta_0,\theta_1)=\frac{1}{2m}\sum\limits_{i=1}^{m}(\hat{y}_i−y_i)^2=\frac{1}{2m}\sum\limits_{i=1}^{m}h_\theta(x_i −y_i)^2
 \end{align*}
 
 To break it apart, it is $\frac{1}{2}\bar{x}$ where $\bar{x}$ is the mean of the squares of $h_\theta(x_{i}) - y$, or the difference between the predicted value and the actual value.
