@@ -222,7 +222,7 @@ With our actual hypothesis function and our actual cost function:
 \end{align*}
 
 
-For the derivate, we solve for $\theta_0$ and $\theta_1$:
+For the partial derivate, we derivate with respect of $\theta_0$ and $\theta_1$:
 
 * For $\theta_0: \frac{d}{d\theta_0}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)$
 
