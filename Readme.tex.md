@@ -206,7 +206,7 @@ Note that if you are already at the local optimum it leaves $\theta_1$ unchanged
 
 # Gradient Descent For Linear Regression
 
-When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We substitute the gradient descent algorithm:
+When specifically applied to the case of linear regression (the "OLS" cost function), a new form of the gradient descent equation can be derived. We substitute the gradient descent algorithm:
 
 \begin{align*}
   \theta_j := \theta_j - \alpha\frac{d}{d\theta_j}J(\theta_0,\theta_1)
@@ -216,6 +216,8 @@ With our actual cost function and our actual hypothesis function:
 
 \begin{align*}
   h_{\theta}(x)= \theta_0 + \theta_1x
+\end{align*}
+\begin{align*}
   J(\theta_0,\theta_1)= \frac{1}{2m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)^2
 \end{align*}
 
