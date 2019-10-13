@@ -214,17 +214,17 @@ With our actual hypothesis function and our actual cost function:
 
 For the derivate, we solve for <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>:
 
-* For <img src="/tex/78ac1f0ccbf60851e4d2dc0ab539b05e.svg?invert_in_darkmode&sanitize=true" align=middle width=232.88126069999996pt height=41.14169729999998pt/>
+* For <img src="/tex/7115e3452676ee02b49fd2c47efcbf49.svg?invert_in_darkmode&sanitize=true" align=middle width=252.97245270000002pt height=41.14169729999998pt/>
 
-* For <img src="/tex/8d13351e5b379532147a5b487d3ebf5a.svg?invert_in_darkmode&sanitize=true" align=middle width=246.92714804999994pt height=41.14169729999998pt/>
+* For <img src="/tex/8bc270de8a690302a6373df25d85f11c.svg?invert_in_darkmode&sanitize=true" align=middle width=267.0183384pt height=41.14169729999998pt/>
 
 Resulting in:
 
 repeat until convergence {
 
-<p align="center"><img src="/tex/33bb149cc87d29ce339e0e1643a05670.svg?invert_in_darkmode&sanitize=true" align=middle width=140.72336355pt height=70.4499609pt/></p>
+<p align="center"><img src="/tex/261c0715c01032b853090ebd78e8145f.svg?invert_in_darkmode&sanitize=true" align=middle width=210.3814614pt height=44.89738935pt/></p>
 
-<p align="center"><img src="/tex/52f7aa4a700306877de0b6b61a858d5a.svg?invert_in_darkmode&sanitize=true" align=middle width=204.33615675pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/1c5df8a0f3bd77299db5d4e7921782b0.svg?invert_in_darkmode&sanitize=true" align=middle width=224.42734874999996pt height=44.89738935pt/></p>
 
 }
 
