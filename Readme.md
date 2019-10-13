@@ -206,11 +206,30 @@ When specifically applied to the case of linear regression (the "OLS" cost funct
 
 <p align="center"><img src="/tex/85f6fd126fe0d1fcb9290362a9b81370.svg?invert_in_darkmode&sanitize=true" align=middle width=174.55293899999998pt height=38.5152603pt/></p>
 
-With our actual cost function and our actual hypothesis function:
+With our actual hypothesis function and our actual cost function:
 
 <p align="center"><img src="/tex/bdf46c49ed58c9399ae3ade9f03789e6.svg?invert_in_darkmode&sanitize=true" align=middle width=120.67521674999999pt height=16.438356pt/></p>
 <p align="center"><img src="/tex/44138a72fe0641526fcfea4accaec310.svg?invert_in_darkmode&sanitize=true" align=middle width=220.70696504999998pt height=44.89738935pt/></p>
 
+
+For the derivate, we solve for <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>:
+
+* For <img src="/tex/78ac1f0ccbf60851e4d2dc0ab539b05e.svg?invert_in_darkmode&sanitize=true" align=middle width=232.88126069999996pt height=41.14169729999998pt/>
+
+* For <img src="/tex/8d13351e5b379532147a5b487d3ebf5a.svg?invert_in_darkmode&sanitize=true" align=middle width=246.92714804999994pt height=41.14169729999998pt/>
+
 Resulting in:
 
-<p align="center"><img src="/tex/f09faee93388331e55e039d8aa9f6f33.svg?invert_in_darkmode&sanitize=true" align=middle width=231.31034025pt height=44.89738935pt/></p>
+repeat until convergence {
+
+<p align="center"><img src="/tex/33bb149cc87d29ce339e0e1643a05670.svg?invert_in_darkmode&sanitize=true" align=middle width=140.72336355pt height=70.4499609pt/></p>
+
+<p align="center"><img src="/tex/52f7aa4a700306877de0b6b61a858d5a.svg?invert_in_darkmode&sanitize=true" align=middle width=204.33615675pt height=44.89738935pt/></p>
+
+}
+
+The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.
+
+So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called batch gradient descent.
+
+Note that, while gradient descent can be susceptible to local minimum in general, the optimization problem we have posed here for linear regression has only one global, and no other local,thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum.
