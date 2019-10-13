@@ -202,13 +202,14 @@ Note that if you are already at the local optimum it leaves <img src="/tex/edcbf
 
 # Gradient Descent For Linear Regression
 
-When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We substitute the gradient descent algorithm:
+When specifically applied to the case of linear regression (the "OLS" cost function), a new form of the gradient descent equation can be derived. We substitute the gradient descent algorithm:
 
 <p align="center"><img src="/tex/85f6fd126fe0d1fcb9290362a9b81370.svg?invert_in_darkmode&sanitize=true" align=middle width=174.55293899999998pt height=38.5152603pt/></p>
 
 With our actual cost function and our actual hypothesis function:
 
-<p align="center"><img src="/tex/1c35c5cba37e39e66b43b00292e2c62e.svg?invert_in_darkmode&sanitize=true" align=middle width=341.38218179999996pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/bdf46c49ed58c9399ae3ade9f03789e6.svg?invert_in_darkmode&sanitize=true" align=middle width=120.67521674999999pt height=16.438356pt/></p>
+<p align="center"><img src="/tex/44138a72fe0641526fcfea4accaec310.svg?invert_in_darkmode&sanitize=true" align=middle width=220.70696504999998pt height=44.89738935pt/></p>
 
 Resulting in:
 
