@@ -72,7 +72,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 
 We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
-<img src="/tex/5124250c58027b14c7d2f110b5db9b9d.svg?invert_in_darkmode&sanitize=true" align=middle width=315.4630330499999pt height=41.14169729999998pt/>
+<p align="center"><img src="/tex/4ea42a11a58c7abb34d72195f1994754.svg?invert_in_darkmode&sanitize=true" align=middle width=62.4042474pt height=14.611878599999999pt/></p>
 
 To break it apart, it is <img src="/tex/d6b19f68aacb4461f4427e1489098827.svg?invert_in_darkmode&sanitize=true" align=middle width=17.920126949999997pt height=27.77565449999998pt/> where <img src="/tex/33717a96ef162d4ca3780ca7d161f7ad.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=18.666631500000015pt/> is the mean of the squares of <img src="/tex/f0e008f4b5c3add6125c62fca6b420a1.svg?invert_in_darkmode&sanitize=true" align=middle width=73.30191659999998pt height=24.65753399999998pt/>, or the difference between the predicted value and the actual value.
 
@@ -148,7 +148,7 @@ The gradient descent algorithm is:
 
 <p align="center"><img src="/tex/85f6fd126fe0d1fcb9290362a9b81370.svg?invert_in_darkmode&sanitize=true" align=middle width=174.55293899999998pt height=38.5152603pt/></p>
 
-where
+where:
 
 <img src="/tex/a8f306a6f9035370006c5350c9aa4aa8.svg?invert_in_darkmode&sanitize=true" align=middle width=53.37235034999999pt height=21.68300969999999pt/> represents the feature index number, <img src="/tex/5fc6094a9c29537af5f99e0fceb76364.svg?invert_in_darkmode&sanitize=true" align=middle width=17.35165739999999pt height=14.15524440000002pt/> is the assigment ("update") math symbol and <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is the learning rate.
 
