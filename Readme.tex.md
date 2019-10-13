@@ -224,20 +224,20 @@ With our actual hypothesis function and our actual cost function:
 
 For the derivate, we solve for $\theta_0$ and $\theta_1$:
 
-* For $\theta_0: \frac{d}{d\theta_0}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)$
+* For $\theta_0: \frac{d}{d\theta_0}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)$
 
-* For $\theta_1: \frac{d}{d\theta_1}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)x_i$
+* For $\theta_1: \frac{d}{d\theta_1}J(\theta_0,\theta_1)=\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)x_i$
 
 Resulting in:
 
 repeat until convergence {
 
 \begin{align*}
-\theta_0 := \theta_0 - \alpha\\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)
+\theta_0 := \theta_0 - \alpha\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)
 \end{align*}
 
 \begin{align*}
-\theta_1 := \theta_1 - \alpha\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i − y_i)x_i
+\theta_1 := \theta_1 - \alpha\frac{1}{m}\sum\limits_{i=1}^{m}(h_{\theta}x_i - y_i)x_i
 \end{align*}
 
 }
