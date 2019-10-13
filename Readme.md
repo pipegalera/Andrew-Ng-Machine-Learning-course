@@ -72,7 +72,7 @@ When the target variable that we’re trying to predict is continuous, such as i
 
 We can measure the accuracy of our hypothesis function by using a cost function. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
-<p align="center"><img src="/tex/4ea42a11a58c7abb34d72195f1994754.svg?invert_in_darkmode&sanitize=true" align=middle width=62.4042474pt height=14.611878599999999pt/></p>
+<p align="center"><img src="/tex/2d597de6f5415d842afd959a0b5522ed.svg?invert_in_darkmode&sanitize=true" align=middle width=325.5789042pt height=44.89738935pt/></p>
 
 To break it apart, it is <img src="/tex/d6b19f68aacb4461f4427e1489098827.svg?invert_in_darkmode&sanitize=true" align=middle width=17.920126949999997pt height=27.77565449999998pt/> where <img src="/tex/33717a96ef162d4ca3780ca7d161f7ad.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=18.666631500000015pt/> is the mean of the squares of <img src="/tex/f0e008f4b5c3add6125c62fca6b420a1.svg?invert_in_darkmode&sanitize=true" align=middle width=73.30191659999998pt height=24.65753399999998pt/>, or the difference between the predicted value and the actual value.
 
