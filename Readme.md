@@ -280,7 +280,7 @@ How to make sure that the gradient descent is working correctly?
 Make a plot with number of iterations on the x-axis. Now plot the cost function, <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> over the number of iterations of gradient descent. If learning rate <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is sufficiently small, then <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> will decrease on every iteration.
 
 <p align="center">
-<img src="images/gradient_iteration1.png" width="60%" height="60%">
+<img src="images/gradient_iteration1.png" width="40%" height="40%">
 </p>
 
 If <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> ever increases, then you probably need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>.
@@ -295,7 +295,7 @@ Try with a scale factors of alpha: <img src="/tex/81b1dd92b992840109f36f36886446
 
 # Features and Polynomial Regression
 
-We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: <img src="/tex/aea110d6a671402e4c0bc37111504b86.svg?invert_in_darkmode&sanitize=true" align=middle width=186.34317074999998pt height=26.76175259999998pt/>
+We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: <img src="/tex/1c9e8b1095e196ef8e2f5baf80e50513.svg?invert_in_darkmode&sanitize=true" align=middle width=231.13174589999994pt height=26.76175259999998pt/>
 
 <p align="center">
 <img src="images/polynomial.png" width="60%" height="60%">
@@ -303,4 +303,14 @@ We can change the behavior or curve of our hypothesis function by making it a qu
 
 One important thing to keep in mind is, if you choose your features this way then feature scaling becomes very important.
 
-For example: if <img src="/tex/277fbbae7d4bc65b6aa601ea481bebcc.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=14.15524440000002pt/> has range 1 - 1000, then range of <img src="/tex/1b18c546a3e04cc5aa0fbf9774cc8b71.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes 1 - 1000000, and the range of <img src="/tex/2c801c1cd04b6e9d689d152b32873b42.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes 1 - 1000000000
+For example: if <img src="/tex/277fbbae7d4bc65b6aa601ea481bebcc.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=14.15524440000002pt/> has range <img src="/tex/3443d8653bc83e0e9c94974dbf7cb485.svg?invert_in_darkmode&sanitize=true" align=middle width=61.18723874999999pt height=21.18721440000001pt/>, then range of <img src="/tex/1b18c546a3e04cc5aa0fbf9774cc8b71.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes <img src="/tex/c85ecc9776f2d6db597d6ccfc9e9144f.svg?invert_in_darkmode&sanitize=true" align=middle width=85.84486679999998pt height=21.18721440000001pt/>, and the range of <img src="/tex/2c801c1cd04b6e9d689d152b32873b42.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes <img src="/tex/94f648cfeaa6d02e00571e786a0ab684.svg?invert_in_darkmode&sanitize=true" align=middle width=110.50249484999998pt height=21.18721440000001pt/>
+
+# Normal Equation
+
+Gradient descent gives one way of minimizing <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/>. Let’s discuss a second way of doing so, this time performing the minimization explicitly and without resorting to an iterative algorithm.
+
+In the "Normal Equation" method, we will minimize <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> by explicitly taking its derivatives, and setting them to zero. This allows us to find the optimum theta without iteration.
+
+The normal equation formula is: <img src="/tex/fbf03f24d68fac3a50be0c675f521fcd.svg?invert_in_darkmode&sanitize=true" align=middle width=134.61145829999998pt height=27.6567522pt/>
+
+With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate. The main drawback is that it is slow if the sample is very large.
