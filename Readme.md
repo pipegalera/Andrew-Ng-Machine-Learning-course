@@ -242,24 +242,21 @@ The multivariable form of the hypothesis function accommodating these multiple f
 
 Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
 
-\[
-h_{\theta}(x)= [\theta_0 \theta_1 ... \theta_n]
-<p align="center"><img src="/tex/804c3e6e3b3eba95e4205de75b08321e.svg?invert_in_darkmode&sanitize=true" align=middle width=40.26078209999999pt height=118.35734295pt/></p> = \theta^{T}x
-\]
+<img src="/tex/ad7aaa0380129cc039b848209d9a1210.svg?invert_in_darkmode&sanitize=true" align=middle width=223.52716484999996pt height=126.57653249999998pt/>
 
 # Gradient Descent for Multiple Variables
 
 The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
 
-<p align="center"><img src="/tex/3d218d59cfada29b69386895a52d28f3.svg?invert_in_darkmode&sanitize=true" align=middle width=1115.7356974499999pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/a0ed4b7032900d9c4a61b4403b26c7c4.svg?invert_in_darkmode&sanitize=true" align=middle width=1115.7356974499999pt height=44.89738935pt/></p>
 
 In other words:
 
-<p align="center"><img src="/tex/fd4a7c63cff55f11a68759ea37566f01.svg?invert_in_darkmode&sanitize=true" align=middle width=619.8554867999999pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/a180dd432697d7c533214cc45e243358.svg?invert_in_darkmode&sanitize=true" align=middle width=619.8554867999999pt height=44.89738935pt/></p>
 
 # Gradient Descent in Practice I - Feature Scaling
 
-We can speed up gradient descent by having each of our input values in roughly the same range. This is because <img src="/tex/acb78648dd6fce9ba8adb474270d3025.svg?invert_in_darkmode&sanitize=true" align=middle width=8.21920935pt height=14.15524440000002pt/> will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.
+We can speed up gradient descent by having each of our input values in roughly the same range. This is because <img src="/tex/27e556cf3caa0673ac49a8f0de3c73ca.svg?invert_in_darkmode&sanitize=true" align=middle width=8.17352744999999pt height=22.831056599999986pt/> will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.
 
 The way to prevent this is to modify the ranges of our input variables so that they are all roughly the same. Ideally: <img src="/tex/e00ad96489e7a2a70015b06f0a6ffa24.svg?invert_in_darkmode&sanitize=true" align=middle width=113.4977646pt height=21.18721440000001pt/>
 
@@ -280,19 +277,19 @@ is a measure of dispersion, either the range of values (max - min), or the stand
 
 How to make sure that the gradient descent is working correctly?
 
-Make a plot with number of iterations on the x-axis. Now plot the cost function, <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> over the number of iterations of gradient descent. If learning rate <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is sufficiently small, then J(θ) will decrease on every iteration.
+Make a plot with number of iterations on the x-axis. Now plot the cost function, <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> over the number of iterations of gradient descent. If learning rate <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is sufficiently small, then <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> will decrease on every iteration.
 
 <p align="center">
 <img src="images/gradient_iteration1.png" width="60%" height="60%">
 </p>
 
-If <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> ever increases, then you probably need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>.
+If <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> ever increases, then you probably need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>.
 
 <p align="center">
-<img src="images/gradient_iteration2">
+<img src="images/gradient_iteration2.png">
 </p>
 
-* Automatic convergence test. Declare convergence if <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> decreases by less than <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> in one iteration, where <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> is some small value such as <img src="/tex/7ecaa0ca1b65792148153cac2f19940d.svg?invert_in_darkmode&sanitize=true" align=middle width=22.990966349999994pt height=26.76175259999998pt/>. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
+* Automatic convergence test. Declare convergence if <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> decreases by less than <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> in one iteration, where <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> is some small value such as <img src="/tex/7ecaa0ca1b65792148153cac2f19940d.svg?invert_in_darkmode&sanitize=true" align=middle width=22.990966349999994pt height=26.76175259999998pt/>. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
 
 Try with a scale factors of alpha: <img src="/tex/81b1dd92b992840109f36f368864460c.svg?invert_in_darkmode&sanitize=true" align=middle width=301.90086134999996pt height=21.18721440000001pt/>
 
@@ -301,5 +298,9 @@ Try with a scale factors of alpha: <img src="/tex/81b1dd92b992840109f36f36886446
 We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: <img src="/tex/aea110d6a671402e4c0bc37111504b86.svg?invert_in_darkmode&sanitize=true" align=middle width=186.34317074999998pt height=26.76175259999998pt/>
 
 <p align="center">
-<img src="images/polynomial" width="60%" height="60%">
+<img src="images/polynomial.png" width="60%" height="60%">
 </p>
+
+One important thing to keep in mind is, if you choose your features this way then feature scaling becomes very important.
+
+For example: if <img src="/tex/277fbbae7d4bc65b6aa601ea481bebcc.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=14.15524440000002pt/> has range 1 - 1000, then range of <img src="/tex/1b18c546a3e04cc5aa0fbf9774cc8b71.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes 1 - 1000000, and the range of <img src="/tex/2c801c1cd04b6e9d689d152b32873b42.svg?invert_in_darkmode&sanitize=true" align=middle width=15.94753544999999pt height=26.76175259999998pt/> becomes 1 - 1000000000
