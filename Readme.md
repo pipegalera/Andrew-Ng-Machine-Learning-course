@@ -233,3 +233,69 @@ The point of all this is that if we start with a guess for our hypothesis and th
 So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called batch gradient descent.
 
 Note that, while gradient descent can be susceptible to local minimum in general, the optimization problem we have posed here for linear regression has only one global, and no other local,thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum.
+
+# Multiple Features
+
+The multivariable form of the hypothesis function accommodating these multiple features is as follows:
+
+<p align="center"><img src="/tex/903ad592c758452b120565e499e8a18b.svg?invert_in_darkmode&sanitize=true" align=middle width=320.02055415pt height=16.438356pt/></p>
+
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
+
+\[
+h_{\theta}(x)= [\theta_0 \theta_1 ... \theta_n]
+<p align="center"><img src="/tex/804c3e6e3b3eba95e4205de75b08321e.svg?invert_in_darkmode&sanitize=true" align=middle width=40.26078209999999pt height=118.35734295pt/></p> = \theta^{T}x
+\]
+
+# Gradient Descent for Multiple Variables
+
+The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
+
+<p align="center"><img src="/tex/3d218d59cfada29b69386895a52d28f3.svg?invert_in_darkmode&sanitize=true" align=middle width=1115.7356974499999pt height=44.89738935pt/></p>
+
+In other words:
+
+<p align="center"><img src="/tex/fd4a7c63cff55f11a68759ea37566f01.svg?invert_in_darkmode&sanitize=true" align=middle width=619.8554867999999pt height=44.89738935pt/></p>
+
+# Gradient Descent in Practice I - Feature Scaling
+
+We can speed up gradient descent by having each of our input values in roughly the same range. This is because <img src="/tex/acb78648dd6fce9ba8adb474270d3025.svg?invert_in_darkmode&sanitize=true" align=middle width=8.21920935pt height=14.15524440000002pt/> will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.
+
+The way to prevent this is to modify the ranges of our input variables so that they are all roughly the same. Ideally: <img src="/tex/e00ad96489e7a2a70015b06f0a6ffa24.svg?invert_in_darkmode&sanitize=true" align=middle width=113.4977646pt height=21.18721440000001pt/>
+
+These aren't exact requirements; we are only trying to speed things up. The goal is to get all input variables into roughly one of these ranges, give or take a few.
+
+Two techniques to help with this are feature scaling and mean normalization.
+* Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, resulting in a new range of just 1.
+
+* Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero. To implement both of these techniques, adjust your input values as shown in this formula:
+<p align="center"><img src="/tex/0f68d69725e19cf853b26b7f06c185cf.svg?invert_in_darkmode&sanitize=true" align=middle width=93.6608838pt height=34.45133834999999pt/></p>
+
+Where <img src="/tex/ce9c41bf6906ffd46ac330f09cacc47f.svg?invert_in_darkmode&sanitize=true" align=middle width=14.555823149999991pt height=14.15524440000002pt/> is the average of <img src="/tex/9fc20fb1d3825674c6a279cb0d5ca636.svg?invert_in_darkmode&sanitize=true" align=middle width=14.045887349999989pt height=14.15524440000002pt/> in the training set, and <img src="/tex/4fa3ac8fe93c68be3fe7ab53bdeb2efa.svg?invert_in_darkmode&sanitize=true" align=middle width=12.35637809999999pt height=14.15524440000002pt/>
+is a measure of dispersion, either the range of values (max - min), or the standard deviation.
+
+# Gradient Descent in Practice II - Learning Rate
+
+* Debugging.
+
+How to make sure that the gradient descent is working correctly?
+
+Make a plot with number of iterations on the x-axis. Now plot the cost function, <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> over the number of iterations of gradient descent. If learning rate <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> is sufficiently small, then J(θ) will decrease on every iteration.
+
+<p align="center">
+<img src="images/gradient_iteration1.png" width="60%" height="60%">
+</p>
+
+If <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> ever increases, then you probably need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>.
+
+<p align="center">
+<img src="images/gradient_iteration2" >
+</p>
+
+* Automatic convergence test. Declare convergence if <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> decreases by less than <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> in one iteration, where <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> is some small value such as <img src="/tex/7ecaa0ca1b65792148153cac2f19940d.svg?invert_in_darkmode&sanitize=true" align=middle width=22.990966349999994pt height=26.76175259999998pt/>. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
+
+Try with a scale factors of alpha: <img src="/tex/81b1dd92b992840109f36f368864460c.svg?invert_in_darkmode&sanitize=true" align=middle width=301.90086134999996pt height=21.18721440000001pt/>
+
+# Features and Polynomial Regression
+
+We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: <img src="/tex/aea110d6a671402e4c0bc37111504b86.svg?invert_in_darkmode&sanitize=true" align=middle width=186.34317074999998pt height=26.76175259999998pt/>
