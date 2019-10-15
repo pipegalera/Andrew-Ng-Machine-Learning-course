@@ -320,7 +320,7 @@ How to make sure that the gradient descent is working correctly?
 Make a plot with number of iterations on the x-axis. Now plot the cost function, $J(\theta)$ over the number of iterations of gradient descent. If learning rate $\alpha$ is sufficiently small, then $J(\theta)$ will decrease on every iteration.
 
 <p align="center">
-<img src="images/gradient_iteration1.png" width="60%" height="60%">
+<img src="images/gradient_iteration1.png" width="40%" height="40%">
 </p>
 
 If $J(\theta)$ ever increases, then you probably need to decrease $\alpha$.
@@ -335,7 +335,7 @@ Try with a scale factors of alpha: $\alpha = ...,0.001,0.003,0.01,0.03,0.1,0.3,1
 
 # Features and Polynomial Regression
 
-We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: $h_{\tetha}(x)=\tetha_0 + \tetha_1x_1 + \tetha_2x_2^2 + \tetha_3x_3^3$
+We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: $h_{\theta}(x)=\theta_0 + \theta_1x_1 + \theta_2x_2^2 + \theta_3x_3^3$
 
 <p align="center">
 <img src="images/polynomial.png" width="60%" height="60%">
@@ -343,4 +343,14 @@ We can change the behavior or curve of our hypothesis function by making it a qu
 
 One important thing to keep in mind is, if you choose your features this way then feature scaling becomes very important.
 
-For example: if $x_1$ has range 1 - 1000, then range of $x_1^2$ becomes 1 - 1000000, and the range of $x_1^3$ becomes 1 - 1000000000
+For example: if $x_1$ has range $1 - 1000$, then range of $x_1^2$ becomes $1 - 1000000$, and the range of $x_1^3$ becomes $1 - 1000000000$
+
+# Normal Equation
+
+Gradient descent gives one way of minimizing $J(\theta)$. Let’s discuss a second way of doing so, this time performing the minimization explicitly and without resorting to an iterative algorithm.
+
+In the "Normal Equation" method, we will minimize $J(\theta)$ by explicitly taking its derivatives, and setting them to zero. This allows us to find the optimum theta without iteration.
+
+The normal equation formula is: $\theta=(X^{T}X)^{-1}X^{T}y$
+
+With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate. The main drawback is that it is slow if the sample is very large.
