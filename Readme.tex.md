@@ -247,3 +247,80 @@ The point of all this is that if we start with a guess for our hypothesis and th
 So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called batch gradient descent.
 
 Note that, while gradient descent can be susceptible to local minimum in general, the optimization problem we have posed here for linear regression has only one global, and no other local,thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum.
+
+# Multiple Features
+
+The multivariable form of the hypothesis function accommodating these multiple features is as follows:
+
+\begin{align*}
+h_{\theta}(x)= \theta_0 + \theta_{1}x_1 + \theta_{2}x_2 + \theta_{3}x_3 + ... + \theta_{n}x_n
+\end{align*}
+
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
+
+\[
+h_{\theta}(x)= [\theta_0 \theta_1 ... \theta_n]
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+. \\
+. \\
+. \\
+x_n \\
+\end{bmatrix} = \theta^{T}x
+\]
+
+# Gradient Descent for Multiple Variables
+
+The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
+
+\begin{align*} & \text{repeat until convergence:} \; \lbrace \newline \; & \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_0^{(i)}\newline \; & \theta_1 := \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_1^{(i)} \newline \; & \theta_2 := \theta_2 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_2^{(i)} \newline & \cdots \newline \rbrace \end{align*}
+
+In other words:
+
+\begin{align*}& \text{repeat until convergence:} \; \lbrace \newline \; & \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} \; & \text{for j := 0...n}\newline \rbrace\end{align*}
+
+# Gradient Descent in Practice I - Feature Scaling
+
+We can speed up gradient descent by having each of our input values in roughly the same range. This is because $\tetha$ will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.
+
+The way to prevent this is to modify the ranges of our input variables so that they are all roughly the same. Ideally: $-1 <= x_i <= 1$
+
+These aren't exact requirements; we are only trying to speed things up. The goal is to get all input variables into roughly one of these ranges, give or take a few.
+
+Two techniques to help with this are feature scaling and mean normalization.
+* Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, resulting in a new range of just 1.
+
+* Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero. To implement both of these techniques, adjust your input values as shown in this formula:
+\begin{align*}
+x_i := \frac{x_i - \mu_i}{s_i}
+\end{align*}
+
+Where $\mu_i$ is the average of $x_i$ in the training set, and $s_i$
+is a measure of dispersion, either the range of values (max - min), or the standard deviation.
+
+# Gradient Descent in Practice II - Learning Rate
+
+* Debugging.
+
+How to make sure that the gradient descent is working correctly?
+
+Make a plot with number of iterations on the x-axis. Now plot the cost function, $J(\tetha)$ over the number of iterations of gradient descent. If learning rate $\alpha$ is sufficiently small, then J(θ) will decrease on every iteration.
+
+<p align="center">
+<img src="images/gradient_iteration1.png" width="60%" height="60%">
+</p>
+
+If $J(\tetha)$ ever increases, then you probably need to decrease $\alpha$.
+
+<p align="center">
+<img src="images/gradient_iteration2" >
+</p>
+
+* Automatic convergence test. Declare convergence if $J(\tetha)$ decreases by less than $E$ in one iteration, where $E$ is some small value such as $10^−3$. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
+
+Try with a scale factors of alpha: $\alpha = ...,0.001,0.003,0.01,0.03,0.1,0.3,1,...$
+
+# Features and Polynomial Regression
+
+We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: $h_{\tetha}(x)=\tetha_0 + \tetha_1x_1 + \tetha_2x_2^2 + \tetha_3x_3^3$
