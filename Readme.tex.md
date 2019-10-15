@@ -314,7 +314,7 @@ Make a plot with number of iterations on the x-axis. Now plot the cost function,
 If $J(\tetha)$ ever increases, then you probably need to decrease $\alpha$.
 
 <p align="center">
-<img src="images/gradient_iteration2" >
+<img src="images/gradient_iteration2">
 </p>
 
 * Automatic convergence test. Declare convergence if $J(\tetha)$ decreases by less than $E$ in one iteration, where $E$ is some small value such as $10^−3$. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
@@ -324,3 +324,7 @@ Try with a scale factors of alpha: $\alpha = ...,0.001,0.003,0.01,0.03,0.1,0.3,1
 # Features and Polynomial Regression
 
 We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: $h_{\tetha}(x)=\tetha_0 + \tetha_1x_1 + \tetha_2x_2^2 + \tetha_3x_3^3$
+
+<p align="center">
+<img src="images/polynomial" width="60%" height="60%">
+</p>
