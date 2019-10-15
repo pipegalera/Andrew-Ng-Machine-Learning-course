@@ -289,7 +289,7 @@ Make a plot with number of iterations on the x-axis. Now plot the cost function,
 If <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> ever increases, then you probably need to decrease <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>.
 
 <p align="center">
-<img src="images/gradient_iteration2" >
+<img src="images/gradient_iteration2">
 </p>
 
 * Automatic convergence test. Declare convergence if <img src="/tex/18f8d58b1347b8f92fc7c1a3c1fe355c.svg?invert_in_darkmode&sanitize=true" align=middle width=23.48178359999999pt height=24.65753399999998pt/> decreases by less than <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> in one iteration, where <img src="/tex/84df98c65d88c6adf15d4645ffa25e47.svg?invert_in_darkmode&sanitize=true" align=middle width=13.08219659999999pt height=22.465723500000017pt/> is some small value such as <img src="/tex/7ecaa0ca1b65792148153cac2f19940d.svg?invert_in_darkmode&sanitize=true" align=middle width=22.990966349999994pt height=26.76175259999998pt/>. However in practice it's difficult to choose this threshold value, it's usually clear when you graph it.
@@ -299,3 +299,7 @@ Try with a scale factors of alpha: <img src="/tex/81b1dd92b992840109f36f36886446
 # Features and Polynomial Regression
 
 We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form). For example: <img src="/tex/aea110d6a671402e4c0bc37111504b86.svg?invert_in_darkmode&sanitize=true" align=middle width=186.34317074999998pt height=26.76175259999998pt/>
+
+<p align="center">
+<img src="images/polynomial" width="60%" height="60%">
+</p>
