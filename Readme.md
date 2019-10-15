@@ -212,7 +212,7 @@ With our actual hypothesis function and our actual cost function:
 <p align="center"><img src="/tex/44138a72fe0641526fcfea4accaec310.svg?invert_in_darkmode&sanitize=true" align=middle width=220.70696504999998pt height=44.89738935pt/></p>
 
 
-For the derivate, we solve for <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>:
+For the partial derivate, we derivate with respect of <img src="/tex/1a3151e36f9f52b61f5bf76c08bdae2b.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/> and <img src="/tex/edcbf8dd6dd9743cceeee21183bbc3b6.svg?invert_in_darkmode&sanitize=true" align=middle width=14.269439249999989pt height=22.831056599999986pt/>:
 
 * For <img src="/tex/7115e3452676ee02b49fd2c47efcbf49.svg?invert_in_darkmode&sanitize=true" align=middle width=252.97245270000002pt height=41.14169729999998pt/>
 
