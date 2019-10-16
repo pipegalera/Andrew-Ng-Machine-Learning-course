@@ -351,6 +351,16 @@ Gradient descent gives one way of minimizing $J(\theta)$. Let’s discuss a seco
 
 In the "Normal Equation" method, we will minimize $J(\theta)$ by explicitly taking its derivatives, and setting them to zero. This allows us to find the optimum theta without iteration.
 
-The normal equation formula is: $\theta=(X^{T}X)^{-1}X^{T}y$
+The normal equation formula is: $\theta=(X^{T}X)^{-1}X^{T}y$ . It finds the $\theta$ that minimizes the cost function $J(\theta)$.
 
-With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate. The main drawback is that it is slow if the sample is very large.
+With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate.
+
+The main drawback is that it is slow if the sample is very large as it needs to compute the inverse of very large matrix $n \times n$ and it doesn't work for more complex models than linear regression.
+
+What if the matrix $X^{T}X$ is non-invertible (singular matrices)?
+
+If $X^{T}X$ is noninvertible, the common causes might be having :
+
+* Redundant features, where two features are very closely related (i.e. they are linearly dependent).
+
+* Too many features (e.g. $m <= n$). In this case, delete some features or use regularization.
