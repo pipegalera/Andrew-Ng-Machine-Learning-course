@@ -248,11 +248,11 @@ Using the definition of matrix multiplication, our multivariable hypothesis func
 
 The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
 
-<p align="center"><img src="/tex/a0ed4b7032900d9c4a61b4403b26c7c4.svg?invert_in_darkmode&sanitize=true" align=middle width=1115.7356974499999pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/d677738553bf300a1ff7343316f3a8fb.svg?invert_in_darkmode&sanitize=true" align=middle width=299.9363466pt height=92.864145pt/></p>
 
 In other words:
 
-<p align="center"><img src="/tex/a180dd432697d7c533214cc45e243358.svg?invert_in_darkmode&sanitize=true" align=middle width=619.8554867999999pt height=44.89738935pt/></p>
+<p align="center"><img src="/tex/3d4b9109e679238a5ba0b83603bb3456.svg?invert_in_darkmode&sanitize=true" align=middle width=605.8525142999999pt height=44.89738935pt/></p>
 
 # Gradient Descent in Practice I - Feature Scaling
 
