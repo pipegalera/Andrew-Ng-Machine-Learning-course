@@ -311,6 +311,16 @@ Gradient descent gives one way of minimizing <img src="/tex/ca79e4e55e2ba419b202
 
 In the "Normal Equation" method, we will minimize <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/> by explicitly taking its derivatives, and setting them to zero. This allows us to find the optimum theta without iteration.
 
-The normal equation formula is: <img src="/tex/fbf03f24d68fac3a50be0c675f521fcd.svg?invert_in_darkmode&sanitize=true" align=middle width=134.61145829999998pt height=27.6567522pt/>
+The normal equation formula is: <img src="/tex/fbf03f24d68fac3a50be0c675f521fcd.svg?invert_in_darkmode&sanitize=true" align=middle width=134.61145829999998pt height=27.6567522pt/> . It finds the <img src="/tex/27e556cf3caa0673ac49a8f0de3c73ca.svg?invert_in_darkmode&sanitize=true" align=middle width=8.17352744999999pt height=22.831056599999986pt/> that minimizes the cost function <img src="/tex/ca79e4e55e2ba419b202c4c9576a0d0e.svg?invert_in_darkmode&sanitize=true" align=middle width=31.655311049999987pt height=24.65753399999998pt/>.
 
-With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate. The main drawback is that it is slow if the sample is very large.
+With the normal equation method, there is no need to choose alpha, since there is no iteration or learning rate.
+
+The main drawback is that it is slow if the sample is very large as it needs to compute the inverse of very large matrix <img src="/tex/3add1221abfa79cb14021bc2dacd5725.svg?invert_in_darkmode&sanitize=true" align=middle width=39.82494449999999pt height=19.1781018pt/> and it doesn't work for more complex models than linear regression.
+
+What if the matrix <img src="/tex/1de8c04d4724ca165e5e49104c88f89a.svg?invert_in_darkmode&sanitize=true" align=middle width=40.17294764999998pt height=27.6567522pt/> is non-invertible (singular matrices)?
+
+If <img src="/tex/1de8c04d4724ca165e5e49104c88f89a.svg?invert_in_darkmode&sanitize=true" align=middle width=40.17294764999998pt height=27.6567522pt/> is noninvertible, the common causes might be having :
+
+* Redundant features, where two features are very closely related (i.e. they are linearly dependent).
+
+* Too many features (e.g. <img src="/tex/3e46e3d0547ca10739be98de8389c8a3.svg?invert_in_darkmode&sanitize=true" align=middle width=59.00304134999999pt height=17.723762100000005pt/>). In this case, delete some features or use regularization.
